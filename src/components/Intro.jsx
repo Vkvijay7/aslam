@@ -90,7 +90,7 @@ export default function Intro() {
             visibility: 'visible',
             pointerEvents: 'auto'
           }}
-          className="absolute z-10 left-0 right-0 top-[26%] xs:top-[28%] md:top-[14%] lg:top-[12%] flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto space-y-3 md:space-y-6 pointer-events-auto"
+          className="absolute z-10 left-0 right-0 top-[32%] xs:top-[34%] md:top-[14%] lg:top-[12%] flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto space-y-3 md:space-y-6 pointer-events-auto"
         >
           {/* Text container: stays 100% opaque on mobile and slides behind the z-20 house */}
           {/* Glassmorphic Badge */}
