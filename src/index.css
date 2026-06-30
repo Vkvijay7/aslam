@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-metropolis: 'Montserrat', sans-serif;
+    --font-hanken: 'Hanken Grotesk', sans-serif;
+    --font-anton: 'Anton', sans-serif;
+    
+    --evergreen: #093D30;
+    --evergreen-dark: #05221B;
+    --bright-gold: #FCD717;
+    --white-smoke: #F2F3F2;
+    --platinum: #E1E2E1;
+    
+    /* Light Mode colors (Matching Homy luxury modern look) */
+    --color-bg: #FFFFFF;
+    --color-text: #120F17;
+    --color-surface: #FFFFFF;
+    --color-surface-container: #F8F9FA;
+    --color-surface-container-low: #F3F4F6;
+    --color-surface-container-lowest: #FFFFFF;
+    --color-outline: rgba(18, 15, 23, 0.06);
+  }
+
+  :root.dark {
+    /* Dark Mode fallback colors */
+    --color-bg: #FFFFFF;
+    --color-text: #120F17;
+    --color-surface: #FFFFFF;
+    --color-surface-container: #F8F9FA;
+    --color-surface-container-low: #F3F4F6;
+    --color-surface-container-lowest: #FFFFFF;
+    --color-outline: rgba(18, 15, 23, 0.06);
+  }
+
+  body {
+    font-family: var(--font-hanken);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    overflow-x: clip;
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.blueprint-grid {
+  background-image: radial-gradient(currentColor 0.5px, transparent 0.5px);
+  background-size: 30px 30px;
+  opacity: 0.08;
+}
+
+/* Intro section cloud layer z-index utilities (not in default Tailwind) */
+.z-\[22\] { z-index: 22; }
+.z-\[24\] { z-index: 24; }
+.z-\[25\] { z-index: 25; }
+.z-\[26\] { z-index: 26; }
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Custom Lenis Smooth Scroll settings */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+  transition: background-color 0.5s ease;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-text);
+  border: 2px solid var(--color-bg);
+  transition: background-color 0.5s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bright-gold);
+}
+
+/* GSAP Animations */
+.gsap-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.gsap-text-reveal {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Hide scrollbar for horizontal scroll views */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
