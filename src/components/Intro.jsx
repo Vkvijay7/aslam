@@ -62,7 +62,7 @@ export default function Intro() {
   const houseY = useTransform(
     smoothProgress, 
     [0, 0.85], 
-    [isDesktop ? 220 : 100, isDesktop ? 0 : -40]
+    [isDesktop ? 220 : 60, isDesktop ? 0 : -40]
   );
   
   const houseScale = useTransform(
@@ -90,7 +90,7 @@ export default function Intro() {
     <section 
       ref={containerRef}
       id="home" 
-      className="relative h-[118vh] lg:h-[145vh] w-full bg-white text-black"
+      className="relative h-[105vh] lg:h-[145vh] w-full bg-white text-black"
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-center items-center">
         
@@ -105,7 +105,7 @@ export default function Intro() {
             visibility: isDesktop ? 'visible' : textVisibility,
             pointerEvents: isDesktop ? 'auto' : textPointerEvents
           }}
-          className="absolute z-10 top-[24%] xs:top-[26%] md:top-[14%] lg:top-[12%] flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto space-y-3 md:space-y-6 pointer-events-auto"
+          className="absolute z-10 left-0 right-0 top-[26%] xs:top-[28%] md:top-[14%] lg:top-[12%] flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto space-y-3 md:space-y-6 pointer-events-auto"
         >
           {/* Glassmorphic Badge */}
           <div className="flex items-center gap-1.5 md:gap-2 bg-white/40 border border-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] md:text-xs font-semibold text-black shadow-sm font-outfit">
@@ -177,7 +177,7 @@ export default function Intro() {
             scale: houseScale,
             willChange: 'transform',
           }}
-          className="absolute z-20 bottom-0 left-0 right-0 w-full flex justify-center pointer-events-none origin-bottom"
+          className="absolute z-20 bottom-[3%] xs:bottom-[5%] md:bottom-0 left-0 right-0 w-full flex justify-center pointer-events-none origin-bottom"
         >
           {!isDesktop ? (
             <img 

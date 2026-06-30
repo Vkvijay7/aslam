@@ -39,7 +39,8 @@
     font-family: var(--font-hanken);
     background-color: var(--color-bg);
     color: var(--color-text);
-    overflow-x: clip;
+    overflow-x: hidden;
+    max-width: 100%;
     transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
