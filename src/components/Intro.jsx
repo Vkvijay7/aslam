@@ -92,6 +92,7 @@ export default function Intro() {
           }}
           className="absolute z-10 left-0 right-0 top-[26%] xs:top-[28%] md:top-[14%] lg:top-[12%] flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto space-y-3 md:space-y-6 pointer-events-auto"
         >
+          {/* Text container: stays 100% opaque on mobile and slides behind the z-20 house */}
           {/* Glassmorphic Badge */}
           <div className="flex items-center gap-1.5 md:gap-2 bg-white/40 border border-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] md:text-xs font-semibold text-black shadow-sm font-outfit">
             <div className="flex -space-x-1.5">
