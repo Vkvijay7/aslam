@@ -32,31 +32,30 @@ export default function Intro() {
 
   // ─── TEXT PARALLAX ───
   // Same animation pattern on both: text moves UP and scales down as you scroll,
-  // sliding behind the z-20 house. Mobile uses smaller travel distance.
+  // sliding behind the z-20 house.
   const textY = useTransform(
     smoothProgress, 
-    [0, 0.8], 
-    isDesktop ? [0, -150] : [0, -100]
+    isDesktop ? [0, 0.8] : [0, 1], 
+    isDesktop ? [0, -150] : [0, -360]
   );
   const textScale = useTransform(
     smoothProgress, 
-    [0, 0.8], 
-    isDesktop ? [1.0, 0.88] : [1.0, 0.92]
+    isDesktop ? [0, 0.8] : [0, 1], 
+    isDesktop ? [1.0, 0.88] : [1.0, 0.90]
   );
 
   // ─── HOUSE PARALLAX ───
-  // Same animation: house starts pushed down, rises to 0 and scales up.
-  // Mobile uses less initial offset since the screen is smaller.
+  // House starts pushed down, rises up continuously on mobile and scales up.
   const houseY = useTransform(
     smoothProgress, 
-    [0, 0.85], 
-    isDesktop ? [220, 0] : [150, 0]
+    isDesktop ? [0, 0.85] : [0, 1], 
+    isDesktop ? [220, 0] : [240, -320]
   );
   
   const houseScale = useTransform(
     smoothProgress, 
-    [0, 0.85], 
-    isDesktop ? [0.95, 1.15] : [0.95, 1.12]
+    isDesktop ? [0, 0.85] : [0, 1], 
+    isDesktop ? [0.95, 1.15] : [0.95, 1.28]
   );
 
   const handleScrollToNext = () => {
@@ -77,7 +76,7 @@ export default function Intro() {
       ref={containerRef}
       id="home" 
       className="relative w-full bg-white text-black"
-      style={{ height: isDesktop ? '145vh' : '115vh' }}
+      style={{ height: isDesktop ? '145vh' : '170vh' }}
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-center items-center">
 

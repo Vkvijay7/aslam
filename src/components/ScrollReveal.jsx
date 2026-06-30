@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 /**
@@ -16,11 +16,25 @@ export default function ScrollReveal({
   scale = 1,
   ...props 
 }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const mobileDistance = direction === 'none' ? 0 : 15;
+  const activeDistance = isMobile ? mobileDistance : distance;
+
   const directionMap = {
-    up: { y: distance, x: 0 },
-    down: { y: -distance, x: 0 },
-    left: { x: distance, y: 0 },
-    right: { x: -distance, y: 0 },
+    up: { y: activeDistance, x: 0 },
+    down: { y: -activeDistance, x: 0 },
+    left: { x: activeDistance, y: 0 },
+    right: { x: -activeDistance, y: 0 },
     none: { x: 0, y: 0 },
   };
 
@@ -39,10 +53,10 @@ export default function ScrollReveal({
         y: 0,
         scale: 1,
       }}
-      viewport={{ once, margin: '-80px' }}
+      viewport={{ once, margin: isMobile ? '-10px' : '-80px' }}
       transition={{ 
-        duration, 
-        delay, 
+        duration: isMobile ? 0.4 : duration, 
+        delay: isMobile ? delay * 0.5 : delay, 
         ease: [0.25, 0.1, 0.25, 1] 
       }}
       className={className}
