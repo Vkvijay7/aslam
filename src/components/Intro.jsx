@@ -35,25 +35,25 @@ export default function Intro() {
   const textY = useTransform(
     smoothProgress, 
     [0, 0.8], 
-    [0, isDesktop ? -150 : -80]
+    [0, -150]
   );
   const textScale = useTransform(
     smoothProgress, 
     [0, 0.8], 
-    [1.0, isDesktop ? 0.88 : 0.95]
+    [1.0, 0.88]
   );
 
   // HOUSE: starts pushed down, rises to 0 — SAME pattern as desktop
   const houseY = useTransform(
     smoothProgress, 
     [0, 0.85], 
-    [isDesktop ? 220 : 60, isDesktop ? 0 : -40]
+    [220, 0]
   );
   
   const houseScale = useTransform(
     smoothProgress, 
     [0, 0.85], 
-    [isDesktop ? 0.95 : 0.93, isDesktop ? 1.15 : 1.06]
+    [0.95, 1.15]
   );
 
 
