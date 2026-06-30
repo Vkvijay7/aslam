@@ -35,27 +35,12 @@ export default function Intro() {
   const textY = useTransform(
     smoothProgress, 
     [0, 0.8], 
-    [0, isDesktop ? -150 : 80]
+    [0, isDesktop ? -150 : -80]
   );
   const textScale = useTransform(
     smoothProgress, 
     [0, 0.8], 
-    [1.0, isDesktop ? 0.88 : 0.9]
-  );
-  const textOpacity = useTransform(
-    smoothProgress,
-    [0, 0.75],
-    [1, isDesktop ? 1.0 : 0]
-  );
-  const textVisibility = useTransform(
-    smoothProgress,
-    [0, 0.75],
-    ["visible", "hidden"]
-  );
-  const textPointerEvents = useTransform(
-    smoothProgress,
-    [0, 0.75],
-    ["auto", "none"]
+    [1.0, isDesktop ? 0.88 : 0.95]
   );
 
   // HOUSE: starts pushed down, rises to 0 — SAME pattern as desktop
@@ -101,9 +86,9 @@ export default function Intro() {
           style={{ 
             y: textY, 
             scale: textScale,
-            opacity: textOpacity,
-            visibility: isDesktop ? 'visible' : textVisibility,
-            pointerEvents: isDesktop ? 'auto' : textPointerEvents
+            opacity: 1,
+            visibility: 'visible',
+            pointerEvents: 'auto'
           }}
           className="absolute z-10 left-0 right-0 top-[26%] xs:top-[28%] md:top-[14%] lg:top-[12%] flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto space-y-3 md:space-y-6 pointer-events-auto"
         >
