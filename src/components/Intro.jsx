@@ -62,7 +62,7 @@ export default function Intro() {
   const houseY = useTransform(
     smoothProgress, 
     [0, 0.85], 
-    [isDesktop ? 220 : 30, isDesktop ? 0 : -50]
+    [isDesktop ? 220 : 100, isDesktop ? 0 : -40]
   );
   
   const houseScale = useTransform(
@@ -90,7 +90,7 @@ export default function Intro() {
     <section 
       ref={containerRef}
       id="home" 
-      className="relative h-[135vh] lg:h-[145vh] w-full bg-white text-black"
+      className="relative h-[118vh] lg:h-[145vh] w-full bg-white text-black"
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-center items-center">
         
