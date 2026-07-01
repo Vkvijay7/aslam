@@ -32,15 +32,27 @@ export default function Intro() {
 
   // ─── TEXT PARALLAX ───
   // Text moves UP and scales down as you scroll, sliding behind the z-20 house.
-  // Same animation feel on both desktop and mobile.
-  const textY = useTransform(smoothProgress, [0, 0.8], [0, -150]);
-  const textScale = useTransform(smoothProgress, [0, 0.8], [1.0, 0.88]);
+  // We keep desktop values strictly untouched, while optimizing mobile progress range and spacing.
+  const desktopTextY = useTransform(smoothProgress, [0, 0.8], [0, -150]);
+  const desktopTextScale = useTransform(smoothProgress, [0, 0.8], [1.0, 0.88]);
+
+  const mobileTextY = useTransform(smoothProgress, [0, 0.95], [0, -50]);
+  const mobileTextScale = useTransform(smoothProgress, [0, 0.95], [1.0, 0.92]);
+
+  const textY = isMobile ? mobileTextY : desktopTextY;
+  const textScale = isMobile ? mobileTextScale : desktopTextScale;
 
   // ─── HOUSE PARALLAX ───
   // House starts pushed down, rises up and scales up as you scroll.
-  // Same animation feel — house rises from below and covers the text.
-  const houseY = useTransform(smoothProgress, [0, 0.85], [220, 0]);
-  const houseScale = useTransform(smoothProgress, [0, 0.85], [0.95, 1.15]);
+  // We keep desktop values strictly untouched, while optimizing mobile progress range and spacing.
+  const desktopHouseY = useTransform(smoothProgress, [0, 0.85], [220, 0]);
+  const desktopHouseScale = useTransform(smoothProgress, [0, 0.85], [0.95, 1.15]);
+
+  const mobileHouseY = useTransform(smoothProgress, [0, 0.95], [240, -80]);
+  const mobileHouseScale = useTransform(smoothProgress, [0, 0.95], [0.95, 1.22]);
+
+  const houseY = isMobile ? mobileHouseY : desktopHouseY;
+  const houseScale = isMobile ? mobileHouseScale : desktopHouseScale;
 
   const handleScrollToNext = () => {
     const el = document.getElementById('about-new');
@@ -60,7 +72,7 @@ export default function Intro() {
       ref={containerRef}
       id="home" 
       className="relative w-full bg-white text-black"
-      style={{ height: '145vh' }}
+      style={{ height: isMobile ? '120vh' : '145vh' }}
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-center items-center">
 
