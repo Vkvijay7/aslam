@@ -22,7 +22,7 @@ export default function Hero() {
 
   return (
     <header
-      className="relative -mt-[260px] sm:-mt-[300px] lg:mt-0 lg:min-h-screen flex items-start lg:items-center pt-[10px] pb-10 lg:pt-[120px] lg:pb-0 overflow-hidden bg-white rounded-t-[32px] sm:rounded-t-[40px] lg:rounded-none shadow-[0_-15px_30px_rgba(0,0,0,0.03)] border-t border-black/5 transition-colors duration-500"
+      className="relative -mt-[200px] sm:-mt-[240px] lg:mt-0 lg:min-h-screen flex items-start lg:items-center pt-[10px] pb-10 lg:pt-[120px] lg:pb-0 overflow-hidden bg-white rounded-t-[32px] sm:rounded-t-[40px] lg:rounded-none shadow-[0_-15px_30px_rgba(0,0,0,0.03)] border-t border-black/5 transition-colors duration-500"
       id="about-new"
     >
       {/* Blueprint Grid Background */}
