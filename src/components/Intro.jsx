@@ -48,7 +48,7 @@ export default function Intro() {
   const desktopHouseY = useTransform(smoothProgress, [0, 0.85], [220, 0]);
   const desktopHouseScale = useTransform(smoothProgress, [0, 0.85], [0.95, 1.15]);
 
-  const mobileHouseY = useTransform(smoothProgress, [0, 0.95], [240, -220]);
+  const mobileHouseY = useTransform(smoothProgress, [0, 0.95], [240, -180]);
   const mobileHouseScale = useTransform(smoothProgress, [0, 0.95], [0.95, 1.22]);
 
   const houseY = isMobile ? mobileHouseY : desktopHouseY;
@@ -72,7 +72,7 @@ export default function Intro() {
       ref={containerRef}
       id="home" 
       className="relative w-full bg-white text-black"
-      style={{ height: isMobile ? '120vh' : '145vh' }}
+      style={{ height: isMobile ? '130vh' : '145vh' }}
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-center items-center">
 
