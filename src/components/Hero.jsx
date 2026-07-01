@@ -31,7 +31,7 @@ export default function Hero() {
       <div className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-12 gap-x-6 md:gap-x-12 gap-y-6 items-start relative z-10">
 
         {/* Block 1: Content Area (Header, Title, Paragraph on the Left Side) */}
-        <div className="col-span-7 md:col-span-7 lg:col-span-8 z-10">
+        <div className="col-span-8 md:col-span-7 lg:col-span-8 z-10">
           <div className="space-y-4 sm:space-y-6 lg:pr-8">
             <motion.span
               initial={{ opacity: 0, y: 15 }}
@@ -66,7 +66,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="grid grid-cols-4 gap-1.5 xs:gap-2 sm:gap-4 w-full md:max-w-[480px] lg:max-w-[560px]"
+                className="grid grid-cols-4 gap-1 xs:gap-1.5 sm:gap-4 w-full md:max-w-[480px] lg:max-w-[560px]"
               >
                 {[
                   { value: '7+', label: 'Years Experience', icon: HardHat },
@@ -79,17 +79,17 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                    className="relative aspect-[3/4] sm:aspect-square bg-evergreen p-1.5 xs:p-2 sm:p-4 shadow-sm hover:shadow-md hover:scale-[1.03] transition-all duration-300 group overflow-hidden flex flex-col justify-between"
+                    className="relative aspect-square bg-evergreen p-2 xs:p-2.5 sm:p-4 shadow-sm hover:shadow-md hover:scale-[1.03] transition-all duration-300 group overflow-hidden flex flex-col justify-between"
                     style={{ borderRadius: '12px' }}
                   >
-                    <span className="font-outfit text-[11px] xs:text-[13px] sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight block leading-none">
+                    <span className="font-outfit text-xs xs:text-sm sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight block leading-none">
                       {stat.value}
                     </span>
                     <div className="border-t border-white/15 pt-1 sm:pt-3 mt-auto flex items-end justify-between w-full">
-                      <span className="font-outfit text-[6.5px] xs:text-[7.5px] sm:text-[10px] md:text-[11px] uppercase tracking-wider text-bright-gold font-extrabold leading-tight max-w-[95%]">
+                      <span className="font-outfit text-[7px] xs:text-[8px] sm:text-[10px] md:text-[11px] uppercase tracking-wider text-bright-gold font-extrabold leading-tight max-w-[95%]">
                         {stat.label}
                       </span>
-                      <stat.icon className="w-2.5 h-2.5 sm:w-4 sm:h-4 text-white/25 group-hover:text-bright-gold transition-colors duration-300 flex-shrink-0 ml-1 hidden xs:block" />
+                      <stat.icon className="w-3 h-3 sm:w-4 sm:h-4 text-white/25 group-hover:text-bright-gold transition-colors duration-300 flex-shrink-0 ml-1 hidden xs:block" />
                     </div>
                   </motion.div>
                 ))}
@@ -122,7 +122,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="col-span-5 md:col-span-5 lg:col-span-4 relative group w-full ml-auto"
+          className="col-span-4 md:col-span-5 lg:col-span-4 relative group w-full ml-auto"
         >
           {/* Main profile image container */}
           <div className="relative overflow-hidden aspect-[0.80] bg-surface-container border border-black/5 rounded-2xl sm:rounded-3xl shadow-sm">
