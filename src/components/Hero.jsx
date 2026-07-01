@@ -22,7 +22,7 @@ export default function Hero() {
 
   return (
     <header
-      className="relative -mt-[50px] sm:-mt-[80px] lg:mt-0 lg:min-h-screen flex items-start lg:items-center pt-[10px] pb-10 lg:pt-[120px] lg:pb-0 overflow-hidden bg-white rounded-none shadow-[0_-15px_30px_rgba(0,0,0,0.03)] border-t border-black/5 transition-colors duration-500"
+      className="relative -mt-[50px] sm:-mt-[80px] lg:mt-0 lg:min-h-screen flex items-start lg:items-center pt-[10px] pb-4 md:pb-10 lg:pb-0 overflow-hidden bg-white rounded-none shadow-[0_-15px_30px_rgba(0,0,0,0.03)] border-t border-black/5 transition-colors duration-500"
       id="about-new"
     >
       {/* Blueprint Grid Background */}
@@ -31,7 +31,7 @@ export default function Hero() {
       <div className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-12 gap-x-6 md:gap-x-12 gap-y-6 items-start relative z-10">
 
         {/* Block 1: Content Area (Header, Title, Paragraph on the Left Side) */}
-        <div className="col-span-7 md:col-span-7 lg:col-span-8 z-10">
+        <div className="col-span-12 md:col-span-7 lg:col-span-8 z-10">
           <div className="space-y-4 sm:space-y-6 lg:pr-8">
             <motion.span
               initial={{ opacity: 0, y: 15 }}
@@ -47,26 +47,26 @@ export default function Hero() {
               delay={150}
               animateBy="words"
               direction="bottom"
-              className="font-hero-heading text-xl sm:text-4xl md:text-5xl lg:text-[72px] text-[#120F17] uppercase leading-none font-extrabold tracking-tighter"
+              className="font-hero-heading text-base xs:text-xl sm:text-4xl md:text-5xl lg:text-[72px] text-[#120F17] uppercase leading-none font-extrabold tracking-tighter"
             />
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
-              className="font-paragraph text-xs sm:text-lg md:text-xl text-[#120F17]/85 max-w-2xl leading-relaxed"
+              className="font-paragraph text-xs xs:text-sm sm:text-lg md:text-xl text-[#120F17]/85 max-w-2xl leading-relaxed"
             >
               With 7 years of dedicated experience in the industry, we specialize in comprehensive civil construction solutions. From meticulous renovations to complete full concrete work, we deliver excellence at every stage. Proudly serving Trichy and Dindigul with top-tier construction services.
             </motion.p>
 
-            {/* Stats Cards & Buttons */}
+            {/* Stats Cards & Buttons (Flows naturally right below paragraph) */}
             <div className="flex flex-col gap-4 sm:gap-6 w-full mt-4 sm:mt-6 md:mt-8">
               {/* Stat Cards */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="grid grid-cols-4 gap-2 sm:gap-4 w-full md:max-w-[480px] lg:max-w-[560px]"
+                className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 w-full md:max-w-[480px] lg:max-w-[560px]"
               >
                 {[
                   { value: '7+', label: 'Years Experience', icon: HardHat },
@@ -79,17 +79,17 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                    className="relative aspect-[3/4] sm:aspect-square bg-evergreen p-2 sm:p-4 shadow-sm hover:shadow-md hover:scale-[1.03] transition-all duration-300 group overflow-hidden flex flex-col justify-between"
+                    className="relative aspect-square bg-evergreen pt-4 pb-3.5 pl-4 pr-2 sm:p-4 shadow-sm hover:shadow-md hover:scale-[1.03] transition-all duration-300 group overflow-hidden flex flex-col justify-between"
                     style={{ borderRadius: '16px' }}
                   >
-                    <span className="font-outfit text-lg sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight block leading-none">
+                    <span className="font-outfit text-2xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight block leading-none">
                       {stat.value}
                     </span>
-                    <div className="border-t border-white/15 pt-1 sm:pt-3 mt-auto flex items-end justify-between w-full">
-                      <span className="font-outfit text-[7px] sm:text-[10px] md:text-[11px] uppercase tracking-wider text-bright-gold font-extrabold leading-tight max-w-[95%]">
+                    <div className="border-t border-white/15 pt-1.5 sm:pt-3 mt-auto flex items-end justify-between w-full">
+                      <span className="font-outfit text-[9px] xs:text-[10px] sm:text-[10px] md:text-[11px] uppercase tracking-wider text-bright-gold font-extrabold leading-tight max-w-[95%]">
                         {stat.label}
                       </span>
-                      <stat.icon className="w-3 h-3 sm:w-4 sm:h-4 text-white/25 group-hover:text-bright-gold transition-colors duration-300 flex-shrink-0 ml-1 hidden sm:block" />
+                      <stat.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white/25 group-hover:text-bright-gold transition-colors duration-300 flex-shrink-0 ml-1 hidden xs:block" />
                     </div>
                   </motion.div>
                 ))}

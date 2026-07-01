@@ -34,7 +34,7 @@ export default function Services() {
     <section id="services" className="scroll-mt-20">
       
       {/* 1. Expertise Overview */}
-      <div className="pt-section-padding-y pb-10 md:pb-16 bg-white transition-colors relative overflow-hidden border-b border-black/5">
+      <div className="pt-8 md:pt-section-padding-y pb-10 md:pb-16 bg-white transition-colors relative overflow-hidden border-b border-black/5">
         {/* Parallax elements */}
         <div className="absolute inset-0 blueprint-grid pointer-events-none text-evergreen opacity-[0.02]"></div>
         
