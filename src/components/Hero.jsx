@@ -66,7 +66,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="grid grid-cols-4 gap-2 xs:gap-3 sm:gap-4 w-full md:max-w-[480px] lg:max-w-[560px]"
+                className="grid grid-cols-4 gap-2 xs:gap-2.5 sm:gap-4 w-full md:max-w-[480px] lg:max-w-[560px]"
               >
                 {[
                   { value: '7+', label: 'Years Experience', icon: HardHat },
@@ -79,14 +79,14 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                    className="relative aspect-square bg-evergreen pt-2.5 pb-2 pl-2.5 pr-1 sm:p-4 shadow-sm hover:shadow-md hover:scale-[1.03] transition-all duration-300 group overflow-hidden flex flex-col justify-between"
+                    className="relative aspect-square bg-evergreen p-2.5 xs:p-3 sm:p-4 shadow-sm hover:shadow-md hover:scale-[1.03] transition-all duration-300 group overflow-hidden flex flex-col justify-between"
                     style={{ borderRadius: '12px' }}
                   >
-                    <span className="font-outfit text-base xs:text-lg sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight block leading-none">
+                    <span className="font-outfit text-lg xs:text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight block leading-none">
                       {stat.value}
                     </span>
-                    <div className="border-t border-white/15 pt-1 sm:pt-3 mt-auto flex items-end justify-between w-full">
-                      <span className="font-outfit text-[7px] xs:text-[8px] sm:text-[10px] md:text-[11px] uppercase tracking-wider text-bright-gold font-extrabold leading-tight max-w-[95%]">
+                    <div className="border-t border-white/15 pt-1.5 sm:pt-3 mt-auto flex items-end justify-between w-full">
+                      <span className="font-outfit text-[7.5px] xs:text-[8.5px] sm:text-[10px] md:text-[11px] uppercase tracking-wider text-bright-gold font-extrabold leading-tight max-w-[95%]">
                         {stat.label}
                       </span>
                       <stat.icon className="w-3 h-3 sm:w-4 sm:h-4 text-white/25 group-hover:text-bright-gold transition-colors duration-300 flex-shrink-0 ml-1 hidden xs:block" />
