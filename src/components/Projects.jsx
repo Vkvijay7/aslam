@@ -185,7 +185,7 @@ export default function Projects() {
           </div>
 
           {/* Right Column: Image Content with Grid Background */}
-          <div className="flex items-center justify-center p-4 md:p-8 pt-2 md:pt-[132px] pb-4 md:pb-16 h-[48vh] md:h-full" style={gridPatternStyle}>
+          <div className="flex items-center justify-center p-4 md:p-8 pt-2 md:pt-[132px] pb-12 md:pb-16 h-[38vh] md:h-full" style={gridPatternStyle}>
             <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-black/5">
               <div 
                 className="absolute top-0 left-0 w-full h-full transition-transform duration-700 ease-in-out"
