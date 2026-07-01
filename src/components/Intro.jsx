@@ -48,7 +48,7 @@ export default function Intro() {
   const desktopHouseY = useTransform(smoothProgress, [0, 0.85], [220, 0]);
   const desktopHouseScale = useTransform(smoothProgress, [0, 0.85], [0.95, 1.15]);
 
-  const mobileHouseY = useTransform(smoothProgress, [0, 0.95], [240, -80]);
+  const mobileHouseY = useTransform(smoothProgress, [0, 0.95], [240, -140]);
   const mobileHouseScale = useTransform(smoothProgress, [0, 0.95], [0.95, 1.22]);
 
   const houseY = isMobile ? mobileHouseY : desktopHouseY;
