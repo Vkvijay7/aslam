@@ -31,7 +31,7 @@ export default function Hero() {
       <div className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-12 gap-y-6 md:gap-x-12 md:gap-y-6 items-start relative z-10">
 
         {/* Block 1: Content Area (Header, Title, Paragraph on the Left Side) */}
-        <div className="col-span-7 md:col-span-7 lg:col-span-8 z-10">
+        <div className="col-span-12 md:col-span-7 lg:col-span-8 z-10">
           <div className="space-y-3 sm:space-y-6 lg:pr-8">
             <motion.span
               initial={{ opacity: 0, y: 15 }}
@@ -122,7 +122,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="col-span-5 md:col-span-5 lg:col-span-4 relative group w-full ml-auto"
+          className="col-span-12 md:col-span-5 lg:col-span-4 relative group w-full max-w-sm md:max-w-none mx-auto md:ml-auto"
         >
           {/* Main profile image container */}
           <div className="relative overflow-hidden aspect-[0.80] bg-surface-container border border-black/5 rounded-xl xs:rounded-2xl sm:rounded-3xl shadow-sm">
@@ -153,7 +153,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-4 gap-4 xs:gap-5 w-full max-w-[360px] xs:max-w-[400px] mx-auto"
+            className="grid grid-cols-2 gap-3.5 xs:gap-4.5 w-full max-w-[360px] xs:max-w-[440px] mx-auto"
           >
             {[
               { value: '7+', label: 'Years Experience', icon: HardHat },
@@ -169,11 +169,11 @@ export default function Hero() {
                 className="relative aspect-square bg-evergreen pt-3 pb-2.5 pl-3.5 pr-2 xs:pt-3.5 xs:pb-3 xs:pl-4 xs:pr-2.5 shadow-sm hover:shadow-md hover:scale-[1.03] transition-all duration-300 group overflow-hidden flex flex-col justify-between"
                 style={{ borderRadius: '12px' }}
               >
-                <span className="font-outfit text-base xs:text-lg font-extrabold text-white tracking-tight block leading-none">
+                <span className="font-outfit text-xl xs:text-2xl font-extrabold text-white tracking-tight block leading-none">
                   {stat.value}
                 </span>
                 <div className="border-t border-white/15 pt-1.5 mt-auto flex items-end justify-between w-full">
-                  <span className="font-outfit text-[7.5px] xs:text-[8.5px] uppercase tracking-wider text-bright-gold font-extrabold leading-tight max-w-[95%]">
+                  <span className="font-outfit text-[9px] xs:text-[10px] uppercase tracking-wider text-bright-gold font-extrabold leading-tight max-w-[95%]">
                     {stat.label}
                   </span>
                   <stat.icon className="w-4 h-4 text-white/25 group-hover:text-bright-gold transition-colors duration-300 flex-shrink-0 ml-1 hidden xs:block" />
