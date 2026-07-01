@@ -95,7 +95,7 @@ export default function Specialties() {
         <div className="relative">
           <ScrollStack
             useWindowScroll={true}
-            itemDistance={window.innerWidth >= 1024 ? 240 : 420}
+            itemDistance={window.innerWidth >= 1024 ? 240 : 160}
             itemScale={0.02}
             itemStackDistance={window.innerWidth >= 1024 ? 30 : 15}
             stackPosition="130px"

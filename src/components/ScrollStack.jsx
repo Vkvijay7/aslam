@@ -206,11 +206,19 @@ const ScrollStack = ({
 
   const setupLenis = useCallback(() => {
     if (useWindowScroll) {
-      // If using window scroll, listen directly to window scroll events.
-      // This integrates with the global Lenis instance in App.jsx.
-      window.addEventListener('scroll', handleScroll, { passive: true });
+      // Use continuous requestAnimationFrame loop to update transforms
+      // in sync with Lenis smooth scrolling to eliminate shaking/jittering.
+      let active = true;
+      const tick = () => {
+        if (!active) return;
+        updateCardTransforms();
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
       return {
-        destroy: () => window.removeEventListener('scroll', handleScroll)
+        destroy: () => {
+          active = false;
+        }
       };
     } else {
       const scroller = scrollerRef.current;
