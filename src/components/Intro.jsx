@@ -36,8 +36,8 @@ export default function Intro() {
   const desktopTextY = useTransform(smoothProgress, [0, 0.8], [0, -150]);
   const desktopTextScale = useTransform(smoothProgress, [0, 0.8], [1.0, 0.88]);
 
-  const mobileTextY = useTransform(smoothProgress, [0, 0.95], [0, -50]);
-  const mobileTextScale = useTransform(smoothProgress, [0, 0.95], [1.0, 0.92]);
+  const mobileTextY = useTransform(smoothProgress, [0, 0.8], [0, -40]);
+  const mobileTextScale = useTransform(smoothProgress, [0, 0.8], [1.0, 0.95]);
 
   const textY = isMobile ? mobileTextY : desktopTextY;
   const textScale = isMobile ? mobileTextScale : desktopTextScale;
@@ -48,8 +48,8 @@ export default function Intro() {
   const desktopHouseY = useTransform(smoothProgress, [0, 0.85], [220, 0]);
   const desktopHouseScale = useTransform(smoothProgress, [0, 0.85], [0.95, 1.15]);
 
-  const mobileHouseY = useTransform(smoothProgress, [0, 0.95], [240, -180]);
-  const mobileHouseScale = useTransform(smoothProgress, [0, 0.95], [0.95, 1.22]);
+  const mobileHouseY = useTransform(smoothProgress, [0, 0.85], [240, -100]);
+  const mobileHouseScale = useTransform(smoothProgress, [0, 0.85], [0.95, 1.20]);
 
   const houseY = isMobile ? mobileHouseY : desktopHouseY;
   const houseScale = isMobile ? mobileHouseScale : desktopHouseScale;
@@ -72,7 +72,7 @@ export default function Intro() {
       ref={containerRef}
       id="home" 
       className="relative w-full bg-white text-black"
-      style={{ height: isMobile ? '130vh' : '145vh' }}
+      style={{ height: '145vh' }}
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-center items-center">
 
