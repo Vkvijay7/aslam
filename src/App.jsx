@@ -49,7 +49,7 @@ export default function App() {
         <Hero />
 
         {/* Scrolling Ticker — Construction keywords */}
-        <div className="bg-evergreen py-4 border-y border-evergreen-dark/20">
+        <div className="hidden md:block bg-evergreen py-4 border-y border-evergreen-dark/20">
           <Marquee 
             items={['ENGINEERING', 'ARCHITECTURE', 'CONSTRUCTION', 'RENOVATION', 'INTERIOR DESIGN', 'STRUCTURAL INTEGRITY', 'PRECISION BUILDS', 'QUALITY ASSURED']}
             speed={35}
