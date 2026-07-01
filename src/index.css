@@ -22,6 +22,19 @@
     --color-surface-container-low: #F3F4F6;
     --color-surface-container-lowest: #FFFFFF;
     --color-outline: rgba(18, 15, 23, 0.06);
+
+    /* 3D Folder Variables */
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.15 0.01 260);
+    --border: oklch(0.9 0.01 260);
+    --accent: oklch(0.75 0.12 45);
+    --accent-foreground: oklch(0.25 0.05 45);
+    --muted: oklch(0.94 0.01 260);
+    --muted-foreground: oklch(0.5 0.02 260);
+    --primary-foreground: oklch(0.98 0 0);
+    --folder-back: oklch(0.75 0.12 45);
+    --folder-front: oklch(0.8 0.14 50);
+    --folder-tab: oklch(0.7 0.1 40);
   }
 
   :root.dark {
@@ -33,6 +46,19 @@
     --color-surface-container-low: #F3F4F6;
     --color-surface-container-lowest: #FFFFFF;
     --color-outline: rgba(18, 15, 23, 0.06);
+
+    /* 3D Folder Variables */
+    --card: oklch(0.16 0.01 260);
+    --card-foreground: oklch(0.95 0.01 260);
+    --border: oklch(0.25 0.01 260);
+    --accent: oklch(0.7 0.12 45);
+    --accent-foreground: oklch(0.98 0.01 45);
+    --muted: oklch(0.22 0.01 260);
+    --muted-foreground: oklch(0.65 0.02 260);
+    --primary-foreground: oklch(0.12 0 0);
+    --folder-back: oklch(0.65 0.12 45);
+    --folder-front: oklch(0.7 0.14 50);
+    --folder-tab: oklch(0.6 0.1 40);
   }
 
   body {

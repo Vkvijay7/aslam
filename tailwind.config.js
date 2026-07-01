@@ -28,6 +28,19 @@ export default {
         "on-surface": "var(--color-text)",
         "on-surface-variant": "var(--color-text)",
         "outline-variant": "var(--color-outline)",
+
+        // 3D Folder Component Variables
+        "card": "var(--card)",
+        "card-foreground": "var(--card-foreground)",
+        "border": "var(--border)",
+        "accent": "var(--accent)",
+        "accent-foreground": "var(--accent-foreground)",
+        "folder-back": "var(--folder-back)",
+        "folder-front": "var(--folder-front)",
+        "folder-tab": "var(--folder-tab)",
+        "muted": "var(--muted)",
+        "muted-foreground": "var(--muted-foreground)",
+        "primary-foreground": "var(--primary-foreground)",
       },
       borderRadius: {
         "DEFAULT": "0px",
