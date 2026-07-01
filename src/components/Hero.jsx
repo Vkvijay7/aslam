@@ -66,7 +66,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="grid grid-cols-4 gap-1 xs:gap-1.5 sm:gap-4 w-full md:max-w-[480px] lg:max-w-[560px]"
+                className="grid grid-cols-4 gap-1.5 xs:gap-2 sm:gap-4 w-full md:max-w-[480px] lg:max-w-[560px]"
               >
                 {[
                   { value: '7+', label: 'Years Experience', icon: HardHat },
@@ -122,7 +122,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="col-span-4 md:col-span-5 lg:col-span-4 relative group w-full ml-auto"
+          className="col-span-4 md:col-span-5 lg:col-span-4 relative group w-full ml-auto pt-[10px] md:pt-0"
         >
           {/* Main profile image container */}
           <div className="relative overflow-hidden aspect-[0.80] bg-surface-container border border-black/5 rounded-2xl sm:rounded-3xl shadow-sm">
