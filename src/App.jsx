@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import Intro from './components/Intro';
@@ -6,14 +6,27 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import Specialties from './components/Specialties';
 import Projects from './components/Projects';
-
+import Showcase from './components/Showcase';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Marquee from './components/Marquee';
+import AdminPanel from './components/AdminPanel';
 
 export default function App() {
+  const [showAdmin, setShowAdmin] = useState(false);
+
+  // Hash-based admin panel routing
+  useEffect(() => {
+    const checkHash = () => {
+      setShowAdmin(window.location.hash === '#admin');
+    };
+    checkHash();
+    window.addEventListener('hashchange', checkHash);
+    return () => window.removeEventListener('hashchange', checkHash);
+  }, []);
+
   useEffect(() => {
     // Force light mode on HTML element for Homy visual look
     const root = document.documentElement;
@@ -74,11 +87,21 @@ export default function App() {
         </div>
 
 
+        <Showcase />
+
         <Pricing />
         <FAQ />
         <Contact />
       </main>
       <Footer />
+
+      {/* Admin Panel — accessible via #admin hash */}
+      {showAdmin && (
+        <AdminPanel onClose={() => {
+          window.location.hash = '';
+          setShowAdmin(false);
+        }} />
+      )}
     </div>
   );
 }

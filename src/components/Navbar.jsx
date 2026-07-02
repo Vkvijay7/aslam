@@ -11,6 +11,7 @@ export default function Navbar() {
     { label: 'About Us', href: '#about-new' },
     { label: 'Services', href: '#services' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Showcase', href: '#showcase' },
     { label: 'Pricing', href: '#pricing' },
   ];
 
@@ -23,7 +24,7 @@ export default function Navbar() {
       }
 
       const scrollPosition = window.scrollY + 200; // offset
-      const sections = ['home', 'about-new', 'services', 'projects', 'pricing', 'contact-us'];
+      const sections = ['home', 'about-new', 'services', 'projects', 'showcase', 'pricing', 'contact-us'];
       for (const sectionId of sections) {
         const el = document.getElementById(sectionId);
         if (el) {

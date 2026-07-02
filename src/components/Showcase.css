@@ -1,0 +1,248 @@
+/* ═══════════════════════════════════════════════════════════
+   SHOWCASE SLIDER — Cinematic full-screen image carousel
+   Optimized for crossfade transitions and fully responsive
+   ═══════════════════════════════════════════════════════════ */
+
+.showcase-section .showcase-slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.showcase-section .slider {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.showcase-section .slider .item {
+  width: 100%;
+  height: 100%;
+  list-style-type: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* Outgoing slide */
+.showcase-section .slider .item:nth-child(1) {
+  z-index: 1;
+  opacity: 0;
+}
+
+/* Active slide */
+.showcase-section .slider .item:nth-child(2) {
+  z-index: 2;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* All upcoming slides remain hidden to keep layout clean and responsive */
+.showcase-section .slider .item:nth-child(3),
+.showcase-section .slider .item:nth-child(4),
+.showcase-section .slider .item:nth-child(5),
+.showcase-section .slider .item:nth-child(n+6) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Slide Content Overlay (Text directly on photo) ── */
+.showcase-section .slider .item .content {
+  width: min(90vw, 600px);
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 4px 20px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  display: none;
+  z-index: 10;
+  padding: 0;
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.showcase-section .slider .item .content .title {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.showcase-section .slider .item .content .description {
+  font-family: 'Hanken Grotesk', sans-serif;
+  line-height: 1.6;
+  font-size: clamp(0.85rem, 2vw, 1.05rem);
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.showcase-section .slider .item .content button {
+  width: fit-content;
+  background-color: #FCD717; /* Brand gold */
+  color: #093D30; /* Brand evergreen */
+  border: none;
+  border-radius: 9999px;
+  padding: 0.9rem 2.2rem;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+}
+
+.showcase-section .slider .item .content button:hover {
+  background-color: white;
+  color: #093D30;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.showcase-section .slider .item .content button:active {
+  transform: translateY(0);
+}
+
+/* Active slide content reveal */
+.showcase-section .slider .item:nth-of-type(2) .content {
+  display: block;
+  animation: showcaseShow 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes showcaseShow {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(-50%) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+/* ── Navigation Arrows ── */
+.showcase-section .showcase-nav {
+  position: absolute;
+  bottom: 3rem;
+  right: 5%;
+  z-index: 5;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.showcase-section .showcase-nav .btn {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.showcase-section .showcase-nav .btn ion-icon {
+  font-size: 1.5rem;
+}
+
+.showcase-section .showcase-nav .btn:hover {
+  background-color: #FCD717;
+  color: #093D30;
+  border-color: #FCD717;
+  transform: scale(1.05);
+}
+
+/* Dark overlay gradient at bottom for readability */
+.showcase-section .slider .item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.3) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS (Mobile Optimization)
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .showcase-section {
+    height: 320px !important;
+  }
+
+  .showcase-section .slider .item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .showcase-section .slider .item .content {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    width: 85%;
+    padding: 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 4px 20px rgba(0, 0, 0, 0.6);
+  }
+
+  .showcase-section .slider .item .content .title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+  }
+
+  .showcase-section .slider .item .content .description {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .showcase-section .slider .item .content button {
+    padding: 0.65rem 1.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .showcase-section .showcase-nav {
+    bottom: 1rem;
+    right: 1rem;
+    left: auto;
+    transform: none;
+    gap: 0.5rem;
+  }
+
+  .showcase-section .showcase-nav .btn {
+    width: 40px;
+    height: 40px;
+  }
+}
