@@ -252,33 +252,52 @@ export default function AdminPanel({ onClose }) {
     <div className="fixed inset-0 z-[100] bg-white overflow-y-auto">
       {/* Header Bar */}
       <div className="sticky top-0 z-10 bg-white/90 backdrop-blur-md border-b border-black/5 px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-evergreen rounded-xl flex items-center justify-center">
-            <Image className="w-5 h-5 text-white" />
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 md:w-10 md:h-10 bg-evergreen rounded-xl flex items-center justify-center shrink-0">
+            <Image className="w-4.5 h-4.5 md:w-5 md:h-5 text-white" />
           </div>
           <div>
-            <h1 className="font-outfit text-lg font-extrabold uppercase tracking-tight text-black leading-none">
+            <h1 className="font-outfit text-sm md:text-lg font-extrabold uppercase tracking-tight text-black leading-none">
               Showcase Admin
             </h1>
-            <p className="font-paragraph text-xs text-black/40 mt-0.5">
+            <p className="font-paragraph text-[10px] md:text-xs text-black/40 mt-0.5">
               {items.length} item{items.length !== 1 ? 's' : ''} in gallery
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 md:gap-2">
+          {/* Guidelines Toggle Button */}
+          <button
+            onClick={() => setShowTips(!showTips)}
+            className={`font-outfit text-[10px] md:text-xs uppercase font-bold px-3 md:px-5 py-2 md:py-2.5 rounded-full tracking-wider transition-all active:scale-95 flex items-center gap-1 md:gap-1.5 whitespace-nowrap border ${
+              showTips
+                ? 'bg-bright-gold text-evergreen border-bright-gold hover:bg-bright-gold/90'
+                : 'bg-white text-black/60 border-black/10 hover:text-black hover:border-black/20'
+            }`}
+            title="Toggle Guidelines"
+          >
+            <span className="w-1.5 h-1.5 bg-current rounded-full"></span>
+            <span className="hidden xs:inline">Guidelines</span>
+            <span className="xs:hidden">Guide</span>
+          </button>
+
+          {/* Add Item Button */}
           <button
             onClick={() => setShowForm(!showForm)}
-            className="bg-evergreen text-white font-outfit text-xs uppercase font-bold px-5 py-2.5 rounded-full tracking-wider hover:bg-evergreen-dark transition-all active:scale-95 flex items-center gap-2"
+            className="bg-evergreen text-white font-outfit text-[10px] md:text-xs uppercase font-bold px-3 md:px-5 py-2 md:py-2.5 rounded-full tracking-wider hover:bg-evergreen-dark transition-all active:scale-95 flex items-center gap-1 md:gap-1.5 whitespace-nowrap"
           >
-            <Plus className="w-4 h-4" />
-            Add Item
+            <Plus className="w-3.5 h-3.5 md:w-4 md:h-4 shrink-0" />
+            <span className="hidden xs:inline">Add Item</span>
+            <span className="xs:hidden">Add</span>
           </button>
+
+          {/* Close Dashboard Button */}
           <button
             onClick={onClose}
-            className="p-2.5 text-black/40 hover:text-black border border-black/10 rounded-full transition-colors"
+            className="p-2 md:p-2.5 text-black/40 hover:text-black border border-black/10 rounded-full transition-colors shrink-0"
             title="Close Admin Panel"
           >
-            <X className="w-4 h-4" />
+            <X className="w-3.5 h-3.5 md:w-4 md:h-4" />
           </button>
         </div>
       </div>
@@ -490,9 +509,9 @@ export default function AdminPanel({ onClose }) {
         </div>
       </div>
 
-      {/* ── Help / Image Guide Card (Bottom Right) ── */}
-      {showTips ? (
-        <div className="fixed bottom-6 right-6 z-20 max-w-[320px] bg-slate-50 border border-black/10 p-5 rounded-2xl shadow-xl hidden md:block animate-fade-in">
+      {/* ── Help / Image Guide Card (Bottom Right / Centered on Mobile) ── */}
+      {showTips && (
+        <div className="fixed bottom-6 right-6 left-6 md:left-auto z-20 max-w-sm md:max-w-[320px] bg-slate-50 border border-black/10 p-5 rounded-2xl shadow-xl animate-fade-in">
           <button
             onClick={() => setShowTips(false)}
             className="absolute top-3 right-3 text-black/30 hover:text-black transition-colors"
@@ -501,7 +520,7 @@ export default function AdminPanel({ onClose }) {
             <X className="w-3.5 h-3.5" />
           </button>
           <h4 className="font-outfit text-xs uppercase font-extrabold tracking-wider text-evergreen flex items-center gap-2 mb-2.5">
-            <span className="w-2 h-2 bg-bright-gold rounded-full"></span>
+            <span className="w-2 h-2 bg-bright-gold rounded-full animate-pulse"></span>
             Photo Guidelines
           </h4>
           <ul className="space-y-2 text-xs font-paragraph text-black/75 leading-relaxed">
@@ -523,15 +542,6 @@ export default function AdminPanel({ onClose }) {
             </li>
           </ul>
         </div>
-      ) : (
-        <button
-          onClick={() => setShowTips(true)}
-          className="fixed bottom-6 right-6 z-20 bg-evergreen hover:bg-evergreen-dark text-white font-outfit text-xs uppercase font-bold px-4 py-3 rounded-full shadow-lg transition-all active:scale-95 flex items-center gap-2"
-          title="Show guidelines"
-        >
-          <span className="w-2 h-2 bg-bright-gold rounded-full animate-ping"></span>
-          💡 Photo Guidelines
-        </button>
       )}
     </div>
   );
